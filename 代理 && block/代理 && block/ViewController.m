@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "HomeView.h"
 
 @interface ViewController ()
 
@@ -16,12 +17,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+    HomeView *homeView = [[HomeView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    homeView.HomeView1Block = ^(){
+        NSLog(@"第一个传过来了");
+    };
+    homeView.HomeView2Block = ^(){
+        NSLog(@"第二个传过来了");
+    };
+    
+    homeView.HomeView3Block = ^(){
+        NSLog(@"第三个传过来了");
+    };
+    homeView.HomeView4Block = ^(){
+        NSLog(@"第四个传过来了");
+    };
+    
+    homeView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:homeView];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end
