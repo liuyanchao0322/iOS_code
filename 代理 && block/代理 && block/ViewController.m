@@ -31,6 +31,8 @@
     };
     homeView.HomeView4Block = ^(){
         NSLog(@"第四个传过来了");
+        
+        NSLog(@"添加了一句log");
     };
     
     homeView.backgroundColor = [UIColor whiteColor];
